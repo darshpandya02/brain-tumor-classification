@@ -144,6 +144,8 @@ Machine-readable results: `reports/cnn_binary.json`, `reports/mobilenet_binary.j
 
 https://brain-tumor-classification-five.vercel.app
 
+![Demo screenshot](reports/figures/demo.png)
+
 - Static files only (`web/`), served by Vercel. No server-side code runs, and no request leaves the site's origin.
   The TF.js runtime and its WASM backend are bundled in `web/vendor/`, and the Content-Security-Policy sets
   `connect-src 'self'`.
