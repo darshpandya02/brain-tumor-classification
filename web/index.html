@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brain MRI Tumor Classifier (research demo)</title>
+  <meta name="description" content="In-browser brain MRI healthy vs tumor classifier with Grad-CAM. Research and education demo, not a medical device.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="disclaimer" role="alert" id="disclaimer">
+    <strong>Research and education demo only. Not a medical device. Not for diagnosis.</strong>
+    The model was trained on a small public dataset and makes mistakes. Its output must not be used to make or
+    inform any clinical decision. If you have health concerns, consult a qualified clinician.
+  </div>
+
+  <header>
+    <h1>Brain MRI tumor classifier</h1>
+    <p class="lede">Binary classification of a single brain MRI slice as <em>healthy</em> or <em>tumor</em>, with a
+      Grad-CAM heatmap showing which regions drove the prediction. Inference runs entirely in your browser with
+      TensorFlow.js.</p>
+    <p class="privacy" id="privacy"><strong>Privacy:</strong> images you upload are processed locally on your device and
+      are never sent anywhere. This page only downloads its own static files (code, model weights and sample
+      images) and has no server-side code.</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label for="model-select">Model</label>
+      <select id="model-select"></select>
+      <span id="status" class="status" aria-live="polite">Loading model...</span>
+    </section>
+
+    <section class="workspace">
+      <div class="panel input-panel">
+        <h2>1. Choose an image</h2>
+        <p class="hint">Samples are randomly drawn from the held-out test split (not selected by how well the model
+          does on them). The true label is shown on each.</p>
+        <div id="samples" class="samples"></div>
+        <div class="upload" id="dropzone">
+          <label class="upload-button" for="file-input">Upload your own image</label>
+          <input type="file" id="file-input" accept="image/*">
+          <span class="hint">or drop a file here. JPEG or PNG, one axial, coronal or sagittal slice.</span>
+        </div>
+      </div>
+
+      <div class="panel result-panel" id="result-panel">
+        <h2>2. Result</h2>
+        <div class="viewer">
+          <canvas id="image-canvas" width="224" height="224" aria-label="Input image"></canvas>
+          <canvas id="cam-canvas" width="224" height="224" aria-label="Grad-CAM heatmap overlay"></canvas>
+        </div>
+        <div class="viewer-controls">
+          <label><input type="checkbox" id="cam-toggle" checked> Show Grad-CAM heatmap</label>
+          <label>Opacity <input type="range" id="cam-opacity" min="0" max="1" step="0.05" value="0.5"></label>
+        </div>
+        <div id="result" class="result empty">Pick a sample or upload an image.</div>
+      </div>
+    </section>
+
+    <section class="panel about">
+      <h2>How the models did on the held-out test set</h2>
+      <div id="metrics"></div>
+      <p class="hint">Test set: images never used for training or model selection, after removing perceptual-hash
+        duplicates and keeping near-identical slices within one split. Probabilities are temperature-scaled with a
+        temperature fit on the validation split; on the test split this did not improve calibration (ECE), so treat
+        the probabilities as rough. Intervals are 95% bootstrap intervals. With only 42 healthy test scans,
+        specificity in particular is uncertain. Positive class = tumor.</p>
+      <h2>What the heatmap means</h2>
+      <p>Grad-CAM highlights regions of the last convolutional feature map that increased the score of the predicted
+        class. It is a rough visual aid, not a tumor segmentation, and it can highlight irrelevant structures.</p>
+      <h2>Limitations</h2>
+      <ul>
+        <li>Trained on 1,926 images from a single public dataset of mixed provenance and scan types (some "no tumor" images appear to be CT, not MRI); it has not
+          been validated on any external or clinical data.</li>
+        <li>No patient identifiers exist in the dataset, so a patient can appear in more than one split despite the
+          near-duplicate grouping.</li>
+        <li>Any image is accepted. Photos, CT scans, or non-brain images will still get a (meaningless) prediction.</li>
+      </ul>
+      <p class="hint">Dataset: <a href="https://huggingface.co/datasets/sartajbhuvaji/Brain-Tumor-Classification">Brain
+        Tumor Classification (MRI)</a> by Sartaj Bhuvaji et al., MIT License. Code:
+        <a href="https://github.com/darshpandya02/brain-tumor-classification">github.com/darshpandya02/brain-tumor-classification</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Research and education demo. Not a medical device. Not for diagnosis.</p>
+  </footer>
+
+  <script src="vendor/tf.min.js"></script>
+  <script src="vendor/tf-backend-wasm.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "name": "mobilenet_binary",
+  "title": "MobileNetV2 (transfer learning)",
+  "input_size": 224,
+  "input_range": [
+    0,
+    255
+  ],
+  "positive_class": "tumor",
+  "temperature": 1.6492785731995125,
+  "threshold": 0.5,
+  "features_layer": "features",
+  "params": 2259265,
+  "test_metrics": {
+    "n": 386,
+    "accuracy": 0.9455958549222798,
+    "sensitivity": 0.9447674418604651,
+    "specificity": 0.9523809523809523,
+    "roc_auc": 0.9925249169435215,
+    "ece": 0.09824616029409486,
+    "brier": 0.04267377632961866,
+    "confusion_matrix": [
+      [
+        40,
+        2
+      ],
+      [
+        19,
+        325
+      ]
+    ]
+  },
+  "test_ci95": {
+    "accuracy": [
+      0.9222797927461139,
+      0.966321243523316
+    ],
+    "sensitivity": [
+      0.9186046511627907,
+      0.9680232558139535
+    ],
+    "specificity": [
+      0.8809523809523809,
+      1.0
+    ],
+    "balanced_accuracy": [
+      0.91140642303433,
+      0.9781976744186047
+    ],
+    "roc_auc": [
+      0.9838039867109635,
+      0.9985482419712072
+    ]
+  }
+}

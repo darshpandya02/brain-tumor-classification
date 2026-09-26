@@ -1,0 +1,74 @@
+[
+  {
+    "file": "sample_00.png",
+    "label": "healthy",
+    "tumor_type": null,
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Testing/no_tumor/image(26).jpg"
+  },
+  {
+    "file": "sample_01.png",
+    "label": "healthy",
+    "tumor_type": null,
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Training/no_tumor/image(132).jpg"
+  },
+  {
+    "file": "sample_02.png",
+    "label": "healthy",
+    "tumor_type": null,
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Training/no_tumor/image(226).jpg"
+  },
+  {
+    "file": "sample_03.png",
+    "label": "healthy",
+    "tumor_type": null,
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Training/no_tumor/image(240).jpg"
+  },
+  {
+    "file": "sample_04.png",
+    "label": "healthy",
+    "tumor_type": null,
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Training/no_tumor/image(286).jpg"
+  },
+  {
+    "file": "sample_05.png",
+    "label": "healthy",
+    "tumor_type": null,
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Training/no_tumor/image(93).jpg"
+  },
+  {
+    "file": "sample_06.png",
+    "label": "tumor",
+    "tumor_type": "glioma",
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Training/glioma_tumor/gg (632).jpg"
+  },
+  {
+    "file": "sample_07.png",
+    "label": "tumor",
+    "tumor_type": "glioma",
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Training/glioma_tumor/gg (822).jpg"
+  },
+  {
+    "file": "sample_08.png",
+    "label": "tumor",
+    "tumor_type": "meningioma",
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Training/meningioma_tumor/m3 (170).jpg"
+  },
+  {
+    "file": "sample_09.png",
+    "label": "tumor",
+    "tumor_type": "meningioma",
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Training/meningioma_tumor/m3 (193).jpg"
+  },
+  {
+    "file": "sample_10.png",
+    "label": "tumor",
+    "tumor_type": "pituitary",
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Training/pituitary_tumor/p (195).jpg"
+  },
+  {
+    "file": "sample_11.png",
+    "label": "tumor",
+    "tumor_type": "pituitary",
+    "source": "sartajbhuvaji/Brain-Tumor-Classification/Training/pituitary_tumor/p (672).jpg"
+  }
+]

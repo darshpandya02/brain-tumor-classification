@@ -1,0 +1,12 @@
+{
+  "models": [
+    {
+      "name": "cnn_binary",
+      "title": "Small CNN (from scratch)"
+    },
+    {
+      "name": "mobilenet_binary",
+      "title": "MobileNetV2 (transfer learning)"
+    }
+  ]
+}

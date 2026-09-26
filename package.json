@@ -1,0 +1,15 @@
+{
+  "name": "brain-tumor-classification-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "vendor": "node scripts/vendor_tfjs.mjs",
+    "test:parity": "node web-tests/parity.mjs",
+    "serve": "python3 web-tests/serve.py 4173"
+  },
+  "devDependencies": {
+    "@tensorflow/tfjs": "4.22.0",
+    "@tensorflow/tfjs-backend-wasm": "4.22.0",
+    "pngjs": "^7.0.0"
+  }
+}

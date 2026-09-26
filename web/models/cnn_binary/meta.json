@@ -1,0 +1,55 @@
+{
+  "name": "cnn_binary",
+  "title": "Small CNN (from scratch)",
+  "input_size": 224,
+  "input_range": [
+    0,
+    255
+  ],
+  "positive_class": "tumor",
+  "temperature": 1.2397301775566945,
+  "threshold": 0.5,
+  "features_layer": "features",
+  "params": 399329,
+  "test_metrics": {
+    "n": 386,
+    "accuracy": 0.9455958549222798,
+    "sensitivity": 0.9476744186046512,
+    "specificity": 0.9285714285714286,
+    "roc_auc": 0.9778516057585825,
+    "ece": 0.05132708174099307,
+    "brier": 0.041695390415272746,
+    "confusion_matrix": [
+      [
+        39,
+        3
+      ],
+      [
+        18,
+        326
+      ]
+    ]
+  },
+  "test_ci95": {
+    "accuracy": [
+      0.9222797927461139,
+      0.966321243523316
+    ],
+    "sensitivity": [
+      0.9244186046511628,
+      0.9709302325581395
+    ],
+    "specificity": [
+      0.8333333333333334,
+      1.0
+    ],
+    "balanced_accuracy": [
+      0.8919573643410853,
+      0.9735672757475082
+    ],
+    "roc_auc": [
+      0.9640746124031008,
+      0.9892736018826135
+    ]
+  }
+}
