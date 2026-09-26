@@ -1,0 +1,72 @@
+{
+  "dataset": "sartajbhuvaji/Brain-Tumor-Classification",
+  "revision": "011f2917d554afac5c962987e8134e835353726e",
+  "images_downloaded": 3264,
+  "images_by_class_downloaded": {
+    "glioma_tumor": 926,
+    "meningioma_tumor": 937,
+    "no_tumor": 500,
+    "pituitary_tumor": 901
+  },
+  "hash": "64-bit pHash (imagehash.phash on grayscale), Hamming distance",
+  "dup_threshold": 2,
+  "group_threshold": 6,
+  "exact_duplicate_files": 237,
+  "near_duplicate_clusters": 369,
+  "duplicate_copies_removed": 554,
+  "label_conflict_clusters": 3,
+  "label_conflict_images_removed": 12,
+  "images_kept": 2698,
+  "original_testing_images": 394,
+  "original_testing_with_duplicate_in_training": 259,
+  "original_testing_with_near_duplicate_in_training": 271,
+  "groups": 1840,
+  "largest_group": 49,
+  "near_duplicate_pairs_across_new_splits": 0,
+  "splits": {
+    "train": {
+      "n": 1926,
+      "healthy": 213,
+      "tumor": 1713,
+      "by_class": {
+        "glioma_tumor": 609,
+        "meningioma_tumor": 549,
+        "no_tumor": 213,
+        "pituitary_tumor": 555
+      }
+    },
+    "val": {
+      "n": 386,
+      "healthy": 43,
+      "tumor": 343,
+      "by_class": {
+        "glioma_tumor": 122,
+        "meningioma_tumor": 110,
+        "no_tumor": 43,
+        "pituitary_tumor": 111
+      }
+    },
+    "test": {
+      "n": 386,
+      "healthy": 42,
+      "tumor": 344,
+      "by_class": {
+        "glioma_tumor": 122,
+        "meningioma_tumor": 110,
+        "no_tumor": 42,
+        "pituitary_tumor": 112
+      }
+    }
+  },
+  "total": {
+    "n": 2698,
+    "healthy": 298,
+    "tumor": 2400,
+    "by_class": {
+      "glioma_tumor": 853,
+      "meningioma_tumor": 769,
+      "no_tumor": 298,
+      "pituitary_tumor": 778
+    }
+  }
+}
